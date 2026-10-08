@@ -1,7 +1,7 @@
 <?php
-// ambil id dari URL buat hapus data
+// liat id kategori dari url hapus
 if (isset($_GET['id'])) {
-  // biar id-nya aman pas ditampilin
+  // tampilin id kategorinya secara aman
   echo "Kategori dengan id " . htmlspecialchars($_GET['id']) . " berhasil dihapus.";
 } else {
   echo "ID kategori tidak ditemukan.";

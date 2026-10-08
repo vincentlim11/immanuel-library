@@ -8,17 +8,17 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // angkut fungsi user buat halaman profil
   require '../../repositories/user-repository.php';
   $user = getUser();
   $profile = getProfile();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar tampil juga di profil saya
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // bagian atasnya judul profil saya
     <?php $pageTitle = 'Profil Saya'; $pageSubtitle = 'Kelola data akun dan profil Anda'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // panggil data penulis buat tabel
   require '../../repositories/author-repository.php';
   $authors = getAuthors();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // pasang menu samping halaman penulis
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // headernya tulis manajemen penulis
     <?php $pageTitle = 'Manajemen Penulis'; $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -42,7 +42,7 @@
               </tr>
             </thead>
             <tbody>
-              // looping tiap penulis buat tabel atau pilihan
+              // putar tiap penulis jadi satu baris
               <?php foreach ($authors as $author): ?>
               <tr>
                 <td>
@@ -55,7 +55,7 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    // tanya dulu yakin mau hapus apa nggak
+                    // minta klik ok dulu sebelum hapus penulis
                     <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus penulis ini?')">Hapus</a>
                   </div>
                 </td>

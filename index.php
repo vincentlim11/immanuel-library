@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  // pasang header/footer landing
+  // tempel navbar landing di atas
   <?php require_once 'components/landing/header.php'; ?>
 
   <!-- ============ HERO ============ -->
@@ -97,7 +97,7 @@
       </div>
     </div>
   </section>
-  // pasang header/footer landing
+  // tempel footer landing di bawah
   <?php require_once 'components/landing/footer.php'; ?>
 </body>
 

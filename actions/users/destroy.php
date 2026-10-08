@@ -1,7 +1,7 @@
 <?php
-// ambil id dari URL buat hapus data
+// ambil id user dari parameter url
 if (isset($_GET['id'])) {
-  // biar id-nya aman pas ditampilin
+  // keluarin id usernya dengan cara yang aman
   echo "Pengguna dengan id " . htmlspecialchars($_GET['id']) . " berhasil dihapus.";
 } else {
   echo "ID pengguna tidak ditemukan.";

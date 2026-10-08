@@ -8,19 +8,19 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // tarik data kategori buat dropdown tambah buku
   require '../../repositories/category-repository.php';
-  // load data dari repository biar bisa dipake di bawah
+  // tarik data penulis buat checkbox tambah buku
   require '../../repositories/author-repository.php';
   $categories = getCategories();
   $authors = getAuthors();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar nongol di form tambah buku
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbarnya judul tambah buku
     <?php $pageTitle = 'Tambah Buku'; $pageSubtitle = 'Lengkapi data buku, kategori, dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -49,7 +49,7 @@
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  // looping tiap kategori buat tabel atau dropdown
+                  // sebar opsi kategori satu-satu di form tambah
                   <?php foreach ($categories as $category): ?>
                     <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                   <?php endforeach; ?>
@@ -67,7 +67,7 @@
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                // looping tiap penulis buat tabel atau pilihan
+                // tebar pilihan penulis satu-satu di form tambah
                 <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
                     <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>">

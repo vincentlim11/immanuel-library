@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // muat fungsi user buat edit
   require '../../repositories/user-repository.php';
   $user = getUser();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sisipin sidebar di edit pengguna
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // atasnya kasih judul edit pengguna
     <?php $pageTitle = 'Edit Pengguna'; $pageSubtitle = 'Perbarui data dan role pengguna'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

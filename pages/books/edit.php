@@ -8,22 +8,22 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // ambil satu buku buat diedit
   require '../../repositories/book-repository.php';
-  // load data dari repository biar bisa dipake di bawah
+  // ambil kategori buat dropdown edit buku
   require '../../repositories/category-repository.php';
-  // load data dari repository biar bisa dipake di bawah
+  // ambil penulis buat checkbox edit buku
   require '../../repositories/author-repository.php';
   $book = getBook();
   $categories = getCategories();
   $authors = getAuthors();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar ikut tampil di edit buku
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbarnya tulis edit buku
     <?php $pageTitle = 'Edit Buku'; $pageSubtitle = 'Perbarui data buku, kategori, dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -53,7 +53,7 @@
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  // looping tiap kategori buat tabel atau dropdown
+                  // cetak ulang opsi kategori di form edit
                   <?php foreach ($categories as $category): ?>
                     <option value="<?= $category['id'] ?>" <?= $category['id'] === $book['category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
                   <?php endforeach; ?>
@@ -71,7 +71,7 @@
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                // looping tiap penulis buat tabel atau pilihan
+                // cetak ulang opsi penulis di form edit
                 <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
                     <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>

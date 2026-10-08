@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // curi satu data buku buat halaman detail
   require '../../repositories/book-repository.php';
   $book = getBook();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar tetap ada di detail buku
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbarnya nunjukin judul detail buku
     <?php $pageTitle = 'Detail Buku'; $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -35,7 +35,7 @@
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
-                  // looping nama penulis jadi chip kecil-kecil
+                  // jajarin penulis bukunya satu per satu
                   <?php foreach ($book['authors'] as $authorName): ?>
                     <span class="chip"><?= $authorName ?></span>
                   <?php endforeach; ?>

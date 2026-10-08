@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar ikutan di tambah pengguna
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbar tambah pengguna dinaikin
     <?php $pageTitle = 'Tambah Pengguna'; $pageSubtitle = 'Buat akun pengguna baru beserta perannya'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // munculin sidebar di tambah kategori
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // kepala tambah kategori dipasang
     <?php $pageTitle = 'Tambah Kategori'; $pageSubtitle = 'Buat kategori baru untuk mengelompokkan buku'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

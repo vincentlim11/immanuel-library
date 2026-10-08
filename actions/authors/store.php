@@ -1,14 +1,14 @@
 <?php
-// cuma jalan kalau formnya beneran disubmit
+// kalau bukan dari tombol tambah penulis ya ditolak aja
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['tambah_penulis'])) {
   echo "Akses tidak valid.";
   return;
 }
-// pastiin fieldnya lengkap dulu biar nggak error
+// cek dulu nama sama bio penulisnya udah keisi belum
 if (isset($_POST['name'], $_POST['bio'])) {
   echo "Penulis baru berhasil diterima:<br>";
   echo "<pre>";
-  // nampilin datanya biar kelihatan keproses
+  // tampilin balik data penulis yang baru masuk
   print_r(['name' => $_POST['name'], 'bio' => $_POST['bio']]);
   echo "</pre>";
 } else {

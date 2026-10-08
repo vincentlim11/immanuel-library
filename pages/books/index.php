@@ -10,16 +10,16 @@
 
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // tarik semua buku dari gudang data
   require '../../repositories/book-repository.php';
   $books = getBooks();
   ?>
   <div class="app-shell">
-    // pasang sidebar biar nongol
+    // selipkan sidebar daftar buku
     <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-      // pasang topbar sekalian set judul halamannya
+      // kepala halamannya manajemen buku
       <?php $pageTitle = 'Manajemen Buku'; $pageSubtitle = 'Kelola data buku, kategori, dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -57,7 +57,7 @@
               </tr>
             </thead>
             <tbody>
-              // looping tiap buku jadi baris tabel
+              // gilir tiap buku masuk ke tabel
               <?php foreach ($books as $book): ?>
               <tr>
                 <td>
@@ -73,7 +73,7 @@
                 <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    // looping nama penulis jadi chip kecil-kecil
+                    // deretin penulisnya jadi label kecil
                     <?php foreach ((array) $book['authors'] as $authorName): ?>
                     <span class="chip"><?= $authorName ?></span>
                     <?php endforeach; ?>
@@ -83,7 +83,7 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    // tanya dulu yakin mau hapus apa nggak
+                    // popup dulu sebelum buku dihapus
                     <a href="../../actions/books/destroy.php?id=<?= $book['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus buku ini?')">Hapus</a>
                   </div>
                 </td>

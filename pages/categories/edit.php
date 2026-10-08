@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // restore fungsi kategori buat edit
   require '../../repositories/category-repository.php';
   $category = getCategory();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar mejeng di edit kategori
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbarnya edit kategori
     <?php $pageTitle = 'Edit Kategori'; $pageSubtitle = 'Perbarui data kategori'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

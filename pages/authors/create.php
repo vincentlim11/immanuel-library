@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // tampilkan menu samping di form tambah penulis
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // tampilkan kepala halaman tambah penulis
     <?php $pageTitle = 'Tambah Penulis'; $pageSubtitle = 'Daftarkan penulis baru ke sistem'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

@@ -10,16 +10,16 @@
 
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // siapin fungsi penulis buat form edit
   require '../../repositories/author-repository.php';
   $author = getAuthor();
   ?>
   <div class="app-shell">
-    // pasang sidebar biar nongol
+    // selipin sidebar di halaman edit penulis
     <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-      // pasang topbar sekalian set judul halamannya
+      // judul atasnya pake mode edit penulis
       <?php $pageTitle = 'Edit Penulis'; $pageSubtitle = 'Perbarui data penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

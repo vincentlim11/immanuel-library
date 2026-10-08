@@ -1,7 +1,7 @@
 <?php
-// ambil id dari URL buat hapus data
+// ngintip id penulis dari link yang diklik
 if (isset($_GET['id'])) {
-  // biar id-nya aman pas ditampilin
+  // tampilin id penulisnya dengan aman biar html-nya nggak jebol
   echo "Penulis dengan id " . htmlspecialchars($_GET['id']) . " berhasil dihapus.";
 } else {
   echo "ID penulis tidak ditemukan.";

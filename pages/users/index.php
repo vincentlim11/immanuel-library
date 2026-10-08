@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // load data dari repository biar bisa dipake di bawah
+  // sedot semua user buat tabel
   require '../../repositories/user-repository.php';
   $users = getUsers();
   ?>
   <div class="app-shell">
-  // pasang sidebar biar nongol
+  // sidebar nongkrong di manajemen pengguna
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // pasang topbar sekalian set judul halamannya
+    // topbarnya manajemen pengguna
     <?php $pageTitle = 'Manajemen Pengguna'; $pageSubtitle = 'Daftar seluruh pengguna beserta perannya (role)'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -43,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              // looping tiap pengguna jadi baris tabel
+              // arak tiap user jadi baris sendiri
               <?php foreach ($users as $user): ?>
               <tr>
                 <td>
@@ -54,7 +54,7 @@
                 </td>
                 <td><?= $user['email'] ?></td>
                 <td>
-                  // bedain badge admin sama member
+                  // kasih stempel beda buat admin dan member
                   <?php if ($user['role'] === 'admin'): ?>
                     <span class="badge badge-admin">Admin</span>
                   <?php else: ?>
@@ -64,7 +64,7 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    // tanya dulu yakin mau hapus apa nggak
+                    // double check sebelum user dihapus
                     <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus pengguna ini?')">Hapus</a>
                   </div>
                 </td>
