@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // Ket vincent: require memuat fungsi repository sebelum dipakai.
+  // load data dari repository biar bisa dipake di bawah
   require '../../repositories/book-repository.php';
   $book = getBook();
   ?>
   <div class="app-shell">
-  // Ket vincent: require menempel sidebar admin bersama.
+  // pasang sidebar biar nongol
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // Ket vincent: require menempel topbar dengan judul halaman aktif.
+    // pasang topbar sekalian set judul halamannya
     <?php $pageTitle = 'Detail Buku'; $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -35,10 +35,9 @@
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
-                  // Ket vincent: foreach mengulang nama penulis jadi chip.
+                  // looping nama penulis jadi chip kecil-kecil
                   <?php foreach ($book['authors'] as $authorName): ?>
                     <span class="chip"><?= $authorName ?></span>
-                  // Ket vincent: foreach mengulang data jadi elemen tampilan.
                   <?php endforeach; ?>
                 </div>
               </div>

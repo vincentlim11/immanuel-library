@@ -1,10 +1,10 @@
 <?php
-// Ket vincent: if guard memastikan request POST dari tombol form.
+// cuma jalan kalau formnya beneran disubmit
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['tambah_buku'])) {
   echo "Akses tidak valid.";
   return;
 }
-// Ket vincent: if isset memastikan field form lengkap sebelum dipakai.
+// pastiin fieldnya lengkap dulu biar nggak error
 if (isset($_POST['title'], $_POST['isbn'], $_POST['year'], $_POST['stock'], $_POST['category_id'], $_POST['description'])) {
   $data = [
     'title' => $_POST['title'],
@@ -13,12 +13,12 @@ if (isset($_POST['title'], $_POST['isbn'], $_POST['year'], $_POST['stock'], $_PO
     'stock' => $_POST['stock'],
     'category_id' => $_POST['category_id'],
     'description' => $_POST['description'],
-    // Ket vincent: ternary memberi array kosong bila penulis tak dipilih.
+    // kalau penulisnya nggak dipilih yaudah kosongin aja
     'author_ids' => isset($_POST['author_ids']) ? $_POST['author_ids'] : [],
   ];
   echo "Buku baru berhasil diterima:<br>";
   echo "<pre>";
-  // Ket vincent: print_r menampilkan bukti data form diterima.
+  // nampilin datanya biar kelihatan keproses
   print_r($data);
   echo "</pre>";
 } else {

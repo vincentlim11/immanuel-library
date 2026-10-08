@@ -1,14 +1,14 @@
 <?php
-// Ket vincent: if guard memastikan request POST dari tombol form.
+// cuma jalan kalau formnya beneran disubmit
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['tambah_penulis'])) {
   echo "Akses tidak valid.";
   return;
 }
-// Ket vincent: if isset memastikan field form lengkap sebelum dipakai.
+// pastiin fieldnya lengkap dulu biar nggak error
 if (isset($_POST['name'], $_POST['bio'])) {
   echo "Penulis baru berhasil diterima:<br>";
   echo "<pre>";
-  // Ket vincent: print_r menampilkan bukti data form diterima.
+  // nampilin datanya biar kelihatan keproses
   print_r(['name' => $_POST['name'], 'bio' => $_POST['bio']]);
   echo "</pre>";
 } else {

@@ -8,16 +8,16 @@
 </head>
 <body>
   <?php
-  // Ket vincent: require memuat fungsi repository sebelum dipakai.
+  // load data dari repository biar bisa dipake di bawah
   require '../../repositories/user-repository.php';
   $users = getUsers();
   ?>
   <div class="app-shell">
-  // Ket vincent: require menempel sidebar admin bersama.
+  // pasang sidebar biar nongol
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // Ket vincent: require menempel topbar dengan judul halaman aktif.
+    // pasang topbar sekalian set judul halamannya
     <?php $pageTitle = 'Manajemen Pengguna'; $pageSubtitle = 'Daftar seluruh pengguna beserta perannya (role)'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -43,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              // Ket vincent: foreach mengulang pengguna jadi baris tabel.
+              // looping tiap pengguna jadi baris tabel
               <?php foreach ($users as $user): ?>
               <tr>
                 <td>
@@ -54,7 +54,7 @@
                 </td>
                 <td><?= $user['email'] ?></td>
                 <td>
-                  // Ket vincent: if role memilih badge admin atau member.
+                  // bedain badge admin sama member
                   <?php if ($user['role'] === 'admin'): ?>
                     <span class="badge badge-admin">Admin</span>
                   <?php else: ?>
@@ -64,12 +64,11 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    // Ket vincent: confirm meminta persetujuan sebelum hapus.
+                    // tanya dulu yakin mau hapus apa nggak
                     <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus pengguna ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
-              // Ket vincent: foreach mengulang data jadi elemen tampilan.
               <?php endforeach; ?>
             </tbody>
           </table>

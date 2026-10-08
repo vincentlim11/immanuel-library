@@ -1,8 +1,8 @@
 <header class="app-topbar">
   <div class="page-title">
-    // Ket vincent: isset memakai judul halaman bila ada.
+    // pake judul dari halaman, kalau nggak ada pake default
     <h1><?= isset($pageTitle) ? $pageTitle : 'Immanuel Library' ?></h1>
-    // Ket vincent: isset memakai subjudul halaman bila ada.
+    // pake subjudul dari halaman, kalau nggak ada kosongin aja
     <p><?= isset($pageSubtitle) ? $pageSubtitle : '' ?></p>
   </div>
   <div class="topbar-user">

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  // Ket vincent: require menempel header atau footer landing.
+  // pasang header/footer landing
   <?php require_once 'components/landing/header.php'; ?>
 
   <!-- ============ HERO ============ -->
@@ -97,7 +97,7 @@
       </div>
     </div>
   </section>
-  // Ket vincent: require menempel header atau footer landing.
+  // pasang header/footer landing
   <?php require_once 'components/landing/footer.php'; ?>
 </body>
 

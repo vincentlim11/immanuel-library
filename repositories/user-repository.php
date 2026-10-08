@@ -1,6 +1,6 @@
 <?php
 
-// Ket vincent: fungsi getUsers merakit daftar pengguna contoh.
+// buat ambil semua pengguna
 function getUsers() {
   return [
     ["id" => 1, "name" => "Admin Utama", "email" => "admin@ski.sch.id", "role" => "admin"],
@@ -10,12 +10,12 @@ function getUsers() {
   ];
 }
 
-// Ket vincent: fungsi getUser mengambil satu pengguna contoh untuk edit.
+// buat ambil satu pengguna buat halaman edit
 function getUser() {
   return ["id" => 2, "name" => "Budi Santoso", "email" => "budi.santoso@siswa.ski.sch.id", "role" => "member"];
 }
 
-// Ket vincent: fungsi getProfile mengambil profil contoh untuk form profil.
+// buat ambil data profil buat form profil
 function getProfile() {
   return ["user_id" => 2, "phone" => "0812-3456-7890", "address" => "Jl. Merdeka No. 21, Pontianak, Kalimantan Barat", "bio" => "Murid kelas XI TKJ yang gemar membaca novel fiksi dan buku pengembangan diri."];
 }

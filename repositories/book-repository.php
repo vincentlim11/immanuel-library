@@ -1,6 +1,6 @@
 <?php
 
-// Ket vincent: fungsi getBooks merakit daftar buku contoh untuk tabel katalog.
+// buat ambil semua buku buat ditampilin di tabel
 function getBooks() {
   return [
     ["id" => 1, "title" => "Laskar Pelangi", "category" => "Fiksi", "year" => 2005, "stock" => 12, "authors" => ["Andrea Hirata"]],
@@ -11,7 +11,7 @@ function getBooks() {
   ];
 }
 
-// Ket vincent: fungsi getBook mengambil satu buku contoh untuk show dan edit.
+// buat ambil satu buku aja, dipake di detail sama edit
 function getBook() {
   return [
     "id" => 5,

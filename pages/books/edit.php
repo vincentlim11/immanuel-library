@@ -8,22 +8,22 @@
 </head>
 <body>
   <?php
-  // Ket vincent: require memuat fungsi repository sebelum dipakai.
+  // load data dari repository biar bisa dipake di bawah
   require '../../repositories/book-repository.php';
-  // Ket vincent: require memuat fungsi repository sebelum dipakai.
+  // load data dari repository biar bisa dipake di bawah
   require '../../repositories/category-repository.php';
-  // Ket vincent: require memuat fungsi repository sebelum dipakai.
+  // load data dari repository biar bisa dipake di bawah
   require '../../repositories/author-repository.php';
   $book = getBook();
   $categories = getCategories();
   $authors = getAuthors();
   ?>
   <div class="app-shell">
-  // Ket vincent: require menempel sidebar admin bersama.
+  // pasang sidebar biar nongol
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
-    // Ket vincent: require menempel topbar dengan judul halaman aktif.
+    // pasang topbar sekalian set judul halamannya
     <?php $pageTitle = 'Edit Buku'; $pageSubtitle = 'Perbarui data buku, kategori, dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -53,10 +53,9 @@
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  // Ket vincent: foreach mengulang kategori jadi baris tabel atau opsi.
+                  // looping tiap kategori buat tabel atau dropdown
                   <?php foreach ($categories as $category): ?>
                     <option value="<?= $category['id'] ?>" <?= $category['id'] === $book['category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
-                  // Ket vincent: foreach mengulang data jadi elemen tampilan.
                   <?php endforeach; ?>
                 </select>
               </div>
@@ -72,13 +71,12 @@
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                // Ket vincent: foreach mengulang penulis jadi baris tabel atau opsi.
+                // looping tiap penulis buat tabel atau pilihan
                 <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
                     <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>
                     <?= $author['name'] ?>
                   </label>
-                // Ket vincent: foreach mengulang data jadi elemen tampilan.
                 <?php endforeach; ?>
               </div>
             </div>

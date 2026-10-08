@@ -1,6 +1,6 @@
 <?php
 
-// Ket vincent: fungsi getCategories merakit daftar kategori contoh.
+// buat ambil semua kategori
 function getCategories() {
   return [
     ["id" => 1, "name" => "Fiksi", "description" => "Novel dan cerita rekaan", "total_books" => 3],
@@ -10,7 +10,7 @@ function getCategories() {
   ];
 }
 
-// Ket vincent: fungsi getCategory mengambil satu kategori contoh untuk edit.
+// buat ambil satu kategori buat halaman edit
 function getCategory() {
   return ["id" => 1, "name" => "Fiksi", "description" => "Novel dan cerita rekaan", "total_books" => 3];
 }
