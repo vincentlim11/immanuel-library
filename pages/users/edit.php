@@ -8,13 +8,16 @@
 </head>
 <body>
   <?php
+  // Ket vincent: require memuat fungsi repository sebelum dipakai.
   require '../../repositories/user-repository.php';
   $user = getUser();
   ?>
   <div class="app-shell">
+  // Ket vincent: require menempel sidebar admin bersama.
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+    // Ket vincent: require menempel topbar dengan judul halaman aktif.
     <?php $pageTitle = 'Edit Pengguna'; $pageSubtitle = 'Perbarui data dan role pengguna'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

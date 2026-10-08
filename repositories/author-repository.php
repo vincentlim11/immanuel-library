@@ -1,5 +1,6 @@
 <?php
 
+// Ket vincent: fungsi getAuthors merakit daftar penulis contoh.
 function getAuthors() {
   return [
     ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.", "total_books" => 1],
@@ -10,6 +11,7 @@ function getAuthors() {
   ];
 }
 
+// Ket vincent: fungsi getAuthor mengambil satu penulis contoh untuk edit.
 function getAuthor() {
   return ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.", "total_books" => 1];
 }

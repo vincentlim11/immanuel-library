@@ -8,9 +8,11 @@
 </head>
 <body>
   <div class="app-shell">
+  // Ket vincent: require menempel sidebar admin bersama.
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+    // Ket vincent: require menempel topbar dengan judul halaman aktif.
     <?php $pageTitle = 'Tambah Pengguna'; $pageSubtitle = 'Buat akun pengguna baru beserta perannya'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

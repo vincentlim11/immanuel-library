@@ -8,13 +8,16 @@
 </head>
 <body>
   <?php
+  // Ket vincent: require memuat fungsi repository sebelum dipakai.
   require '../../repositories/category-repository.php';
   $categories = getCategories();
   ?>
   <div class="app-shell">
+  // Ket vincent: require menempel sidebar admin bersama.
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+    // Ket vincent: require menempel topbar dengan judul halaman aktif.
     <?php $pageTitle = 'Manajemen Kategori'; $pageSubtitle = 'Kelola kategori untuk mengelompokkan buku'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -40,6 +43,7 @@
               </tr>
             </thead>
             <tbody>
+              // Ket vincent: foreach mengulang kategori jadi baris tabel atau opsi.
               <?php foreach ($categories as $category): ?>
               <tr>
                 <td>
@@ -53,10 +57,12 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $category['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                    // Ket vincent: confirm meminta persetujuan sebelum hapus.
                     <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus kategori ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
+              // Ket vincent: foreach mengulang data jadi elemen tampilan.
               <?php endforeach; ?>
             </tbody>
           </table>

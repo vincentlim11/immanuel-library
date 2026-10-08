@@ -10,13 +10,16 @@
 
 <body>
   <?php
+  // Ket vincent: require memuat fungsi repository sebelum dipakai.
   require '../../repositories/author-repository.php';
   $author = getAuthor();
   ?>
   <div class="app-shell">
+    // Ket vincent: require menempel sidebar admin bersama.
     <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+      // Ket vincent: require menempel topbar dengan judul halaman aktif.
       <?php $pageTitle = 'Edit Penulis'; $pageSubtitle = 'Perbarui data penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">

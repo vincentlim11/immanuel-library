@@ -8,13 +8,16 @@
 </head>
 <body>
   <?php
+  // Ket vincent: require memuat fungsi repository sebelum dipakai.
   require '../../repositories/book-repository.php';
   $book = getBook();
   ?>
   <div class="app-shell">
+  // Ket vincent: require menempel sidebar admin bersama.
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+    // Ket vincent: require menempel topbar dengan judul halaman aktif.
     <?php $pageTitle = 'Detail Buku'; $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -32,8 +35,10 @@
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
+                  // Ket vincent: foreach mengulang nama penulis jadi chip.
                   <?php foreach ($book['authors'] as $authorName): ?>
                     <span class="chip"><?= $authorName ?></span>
+                  // Ket vincent: foreach mengulang data jadi elemen tampilan.
                   <?php endforeach; ?>
                 </div>
               </div>

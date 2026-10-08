@@ -8,13 +8,16 @@
 </head>
 <body>
   <?php
+  // Ket vincent: require memuat fungsi repository sebelum dipakai.
   require '../../repositories/author-repository.php';
   $authors = getAuthors();
   ?>
   <div class="app-shell">
+  // Ket vincent: require menempel sidebar admin bersama.
   <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
+    // Ket vincent: require menempel topbar dengan judul halaman aktif.
     <?php $pageTitle = 'Manajemen Penulis'; $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem'; require '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
@@ -39,6 +42,7 @@
               </tr>
             </thead>
             <tbody>
+              // Ket vincent: foreach mengulang penulis jadi baris tabel atau opsi.
               <?php foreach ($authors as $author): ?>
               <tr>
                 <td>
@@ -51,10 +55,12 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                    // Ket vincent: confirm meminta persetujuan sebelum hapus.
                     <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus penulis ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
+              // Ket vincent: foreach mengulang data jadi elemen tampilan.
               <?php endforeach; ?>
             </tbody>
           </table>
